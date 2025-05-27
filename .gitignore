@@ -1,0 +1,41 @@
+# Local Terraform directories
+.terraform/
+
+# .tfstate files
+# These store the state of your managed infrastructure.
+# **Strongly recommended to use a remote backend instead of committing these.**
+# If you are using local state for a strictly solo project (not recommended for teams),
+# you might be tempted to commit them, but it's risky.
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.backup
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all .tfvars files, which are likely to contain sensitive data,
+# except for default or example variable files.
+# It's good practice to commit a .tfvars.example file.
+*.tfvars
+!*.tfvars.example # if you use example files
+
+# Exclude override files from being committed
+# These are useful for local testing or temporary changes.
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform plan files
+# These can contain sensitive information and are specific to a point in time.
+*.tfplan
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+.terraform.lock.hcl
+tfplan
+tfplan.txt
