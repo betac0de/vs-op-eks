@@ -1,0 +1,27 @@
+brew install kubectl
+kubectl version --client
+brew install minikube
+minikube version
+minikube start --driver=docker --cpus=6 --memory=7000mb
+kubectl cluster-info
+kubectl cluster-info dump
+kubectl get nodes
+kubectl describe node minikube
+kubectl create deployment nginx-deployment --image=nginx:latest
+kubectl get deployments
+kubectl get replicasets
+kubectl get pods\
+# You might also use 'kubectl get pods -o wide' for more details like IP and node
+kubectl describe deployment nginx-deployment
+kubectl get pods
+kubectl describe pod nginx-deployment-5dd747964d-964ls
+kubectl expose deployment nginx-deployment --type=NodePort --port=80
+kubectl get services
+minikube service nginx-deployment
+kubectl scale deployment nginx-deployment --replicas=3
+kubectl get pods
+kubectl set image deployment/nginx-deployment nginx=nginx:1.25.0
+kubectl rollout status deployment/nginx-deployment
+minikube stop
+kubectl get pods
+minikube delete
