@@ -8,9 +8,9 @@ kubectl cluster-info dump
 kubectl get nodes
 kubectl describe node minikube
 kubectl create deployment nginx-deployment --image=nginx:latest
+kubectl apply -f nginx-deployment.yaml
 kubectl get deployments
 kubectl get replicasets
-kubectl get pods\
 # You might also use 'kubectl get pods -o wide' for more details like IP and node
 kubectl describe deployment nginx-deployment
 kubectl get pods
@@ -22,6 +22,9 @@ kubectl scale deployment nginx-deployment --replicas=3
 kubectl get pods
 kubectl set image deployment/nginx-deployment nginx=nginx:1.25.0
 kubectl rollout status deployment/nginx-deployment
+kubectl delete deployment nginx-deployment
+kubectl delete deployments --all
+kubectl delete pod <your-pod-name>
 minikube stop
 kubectl get pods
 minikube delete
